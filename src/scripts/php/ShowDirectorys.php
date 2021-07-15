@@ -1,6 +1,5 @@
 <?php 
-  $path = "projects/";
-  $diretorio = dir($path);
+  $diretorio = dir("../../../../projects");
   
   while($arquivo = $diretorio -> read()){
   echo "<a class =".'Link'." href='".$path.$arquivo."'>".$arquivo."</a><br />";
