@@ -12,7 +12,7 @@ Resposta='';
 Resposta=\$(xdg-settings get default-web-browser);
 Resposta=\${Resposta//.desktop};
 code /var/www/html/projects/;
-\$Resposta http://localhost/Lampp-Installer/src/index.html;
+\$Resposta http://localhost/Lampp-Installer/src/index.php;
 " >> xampp.sh
 
 chmod 777 xampp.sh
