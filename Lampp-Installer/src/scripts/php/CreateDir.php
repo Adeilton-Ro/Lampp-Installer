@@ -3,6 +3,11 @@
     $nameDir = $_POST["nameDir"];
     $extension = $_POST["extension"];
     
-    fopen("$path/$nameDir.$extension", "w");
-    chmod("$path/$nameDir.$extension", 0777);
+    if($extension === "dir"){
+        mkdir("$path/$nameDir");
+        chmod("$path/$nameDir", 0777);
+    }else{
+        fopen("$path/$nameDir.$extension", "w");
+        chmod("$path/$nameDir.$extension", 0777);
+    }
 ?>

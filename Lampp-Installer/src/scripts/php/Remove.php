@@ -1,6 +1,5 @@
 <?php
     $path = "../../../../projects";
-    $directory = $_POST["directory"];
-    $Extension = $_POST["extension"];
-    unlink("$path/$directory.$Extension");
+    $directory = $_GET["directory"];
+    unlink("$path/$directory");
 ?>

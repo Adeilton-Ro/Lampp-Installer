@@ -28,21 +28,23 @@
       </div>
       <div class="list-container">
         <?php
-      $diretorio = dir("../../projects");
+        $diretorio = dir("../../projects");
 
-      while ($arquivo = $diretorio->read()) {
-        if($arquivo !== "." && $arquivo !== "..")
-        echo "<div class=" . 'file-container' . ">
-                <a class =" . 'file' . " href='" . "../../projects/". $arquivo . "'>" . $arquivo . "</a>
+        while ($arquivo = $diretorio->read()) {
+          
+          if ($arquivo !== "." && $arquivo !== "..")
+            echo "<div class=" . 'file-container' . ">
+                <a class =" . 'file' . " href='" . "../../projects/" . $arquivo . "'>" . $arquivo . "</a>
                 <br />
                 <div>
-                  <button><i class='fas fa-trash'></i></button>
-                  <button><i class='fas fa-edit'></i></button>
+                <a href='scripts/php/Remove.php?directory=$arquivo'><i class='fas fa-trash'></i></a>
+                <button><i class='fas fa-edit'></i></button>
                 </div>
-              </div>";
-      }
-      $diretorio->close();
-      ?>
+                </div>";
+              }
+              $diretorio->close();
+              ?>
+
       </div>
     </aside>
     <main>
@@ -67,6 +69,7 @@
           <option value="html">HTML</option>
           <option value="css">CSS</option>
           <option value="js">JavaScript</option>
+          <option value="dir"> Directory </option>
           <option value="md">README</option>
         </select>
         <button type="submit">Start a New Project</button>
