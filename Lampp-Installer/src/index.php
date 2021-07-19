@@ -26,15 +26,24 @@
           <b>your project</b>!
         </p>
       </div>
-      <?php
+      <div class="list-container">
+        <?php
       $diretorio = dir("../../projects");
 
       while ($arquivo = $diretorio->read()) {
         if($arquivo !== "." && $arquivo !== "..")
-        echo "<a class =" . 'Link' . " href='" . "../../projects/". $arquivo . "'>" . $arquivo . "</a><br />";
+        echo "<div class=" . 'file-container' . ">
+                <a class =" . 'file' . " href='" . "../../projects/". $arquivo . "'>" . $arquivo . "</a>
+                <br />
+                <div>
+                  <button><i class='fas fa-trash'></i></button>
+                  <button><i class='fas fa-edit'></i></button>
+                </div>
+              </div>";
       }
       $diretorio->close();
       ?>
+      </div>
     </aside>
     <main>
       <img class="icon-image" src="assets/iconImg.png" alt="Xamp on linux" />

@@ -25,6 +25,8 @@ aside .bar {
   align-items: center;
   justify-content: space-between;
   padding: 10px 5rem;
+
+  margin-bottom: 36px;
 }
 
 aside .bar .subtitle {
@@ -49,6 +51,45 @@ aside .bar button {
 
 .bar button:hover {
   background-color: #eb8911;
+}
+
+.list-container .file-container {
+  padding: 0 50px;
+
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.file-container button {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 6px;
+  border: 0;
+
+  cursor: pointer;
+
+  background-color: #fff;
+  transition: .2s;
+}
+
+.file-container button i {
+  color: #333;
+}
+
+button:hover {
+  background-color: rgb(204, 204, 204);
+}
+
+
+.file {
+  text-decoration: none;
+  color: #333;
 }
 
 .container main {
