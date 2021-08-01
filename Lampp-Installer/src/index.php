@@ -27,23 +27,11 @@
         </p>
       </div>
       <div class="list-container">
+        <form action="./scripts/php/Remove.php" method="post"></form>
         <?php
-        $diretorio = dir("../../projects");
-
-        while ($arquivo = $diretorio->read()) {
-          
-          if ($arquivo !== "." && $arquivo !== "..")
-            echo "<div class=" . 'file-container' . ">
-                <a class =" . 'file' . " href='" . "../../projects/" . $arquivo . "'>" . $arquivo . "</a>
-                <br />
-                <div>
-                <a href='scripts/php/Remove.php?directory=$arquivo'><i class='fas fa-trash'></i></a>
-                <button><i class='fas fa-edit'></i></button>
-                </div>
-                </div>";
-              }
-              $diretorio->close();
-              ?>
+          include("./scripts/php/ShowDirectorys.php");
+          ShowDirectorys();
+        ?>
 
       </div>
     </aside>
