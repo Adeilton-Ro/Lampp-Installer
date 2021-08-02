@@ -1,11 +1,10 @@
 <?php
-    if(isset($_POST["Rename"])){
+    if(isset($_POST["rename"])){
         RenameD();
     }
-
     function RenameD(){
         $path = "../../../../projects";
-        $directory = $_POST["directory"];
+        $directory = $_POST["rename"];
         $extension = $_POST["extension"];
         $newName = $_POST["newName"];
         if($extension == "dir"){

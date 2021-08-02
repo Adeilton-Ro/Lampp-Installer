@@ -1,14 +1,21 @@
 <?php
-    if(isset($_POST['Remove'])){
-        Remove();
+if (isset($_POST['Remove'])) {
+    Remove();
+}
+function Remove()
+{
+    $pathAndDirectory = $_POST["Remove"];
+    if (is_dir("../../$pathAndDirectory")) {
+        rmdir("../../$pathAndDirectory");
+    } else {
+        unlink("../../$pathAndDirectory");
     }
-    function Remove(){
-        $directory = $_POST["Remove"];
-        $path = "../../../../projects";
-        if(is_dir("$path/$directory")){
-            rmdir("$path/$directory");
-        }else{
-            unlink("$path/$directory");
-        }
-    }
+    $directoryWithoutPath = strrpos(substr("$pathAndDirectory", 0, -1),'/');
+    $path = substr("$pathAndDirectory", 0, $directoryWithoutPath);
+    echo ("
+    <script>
+    window.location.href = '../../index.php?dir=$path';
+    </script>
+    ");
+}
 ?>

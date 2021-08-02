@@ -27,10 +27,8 @@
         </p>
       </div>
       <div class="list-container">
-        <form action="./scripts/php/Remove.php" method="post"></form>
         <?php
           include("./scripts/php/ShowDirectorys.php");
-          ShowDirectorys();
         ?>
 
       </div>
@@ -49,20 +47,20 @@
       <h1>Setup initialization</h1>
 
       <p>Select settings for creating your project.</p>
-
-      <form action="scripts/php/CreateDir.php" method="POST">
-        <input type="text" placeholder="Name Your Project" name="nameDir">
-        <select name="extension">
-          <option value="php">PHP</option>
-          <option value="html">HTML</option>
-          <option value="css">CSS</option>
-          <option value="js">JavaScript</option>
-          <option value="dir"> Directory </option>
-          <option value="md">README</option>
+      <?php
+      echo "<form action='scripts/php/CreateDir.php' method='POST'>
+        <input type='text' placeholder='Name Your Project' name='nameDir'>
+        <select name='extension'>
+          <option value='php'>PHP</option>
+          <option value='html'>HTML</option>
+          <option value='css'>CSS</option>
+          <option value='js'>JavaScript</option>
+          <option value='dir'> Directory </option>
+          <option value='md'>README</option>
         </select>
-        <button type="submit">Start a New Project</button>
-      </form>
-
+        <button type='submit' name='createDir' value=$openDir>Start a New Project</button>
+      </form>";
+      ?>
       <button id="close">
         <i class="fas fa-times"></i>
       </button>

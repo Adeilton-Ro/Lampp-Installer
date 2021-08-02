@@ -1,7 +1,6 @@
 <?php
-function ShowDirectorys(){
   include("Remove.php");
-  $openDir = ($_GET['dir'] != "" ? $_GET['dir'] : "../../projects");
+   $openDir = ($_GET['dir'] != "" ? $_GET['dir'] : "../../projects");
           $diretorio = dir($openDir);
           $strrdir = strrpos(substr($openDir, 0, -1),'/');
           $return = substr($openDir, 0, $strrdir);
@@ -16,7 +15,7 @@ function ShowDirectorys(){
               echo "<br>
                     <div>
                     <form action='./scripts/php/Remove.php' method='post'>
-                    <button value=$arquivo name='Remove'><i class='fas fa-trash'></i></button>
+                    <button value=$openDir/$arquivo name='Remove'><i class='fas fa-trash'></i></button>
                     </form>
                     </div>
               </div>";
@@ -26,5 +25,3 @@ function ShowDirectorys(){
             echo "<a class='return' href='index.php?dir=$return'>Voltar</a>";
           }
             $diretorio->close();
-  }
-?>
