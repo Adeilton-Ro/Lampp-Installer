@@ -104,7 +104,7 @@ form select {
   padding-right: 20px;
 }
 
-form button {
+form #modal-button {
   position: absolute;
 
   bottom: 30px;
@@ -125,6 +125,6 @@ form button {
   transition: background-color 0.3s ease;
 }
 
-form button:hover {
+form #modal-button:hover {
   background-color: #eb8911;
 }

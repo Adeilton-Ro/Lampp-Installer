@@ -65,7 +65,12 @@ aside .bar button {
   margin-bottom: 8px;
 }
 
-.file-container button {
+.file-container form{
+  width: 30px;
+  height: 30px;
+}
+
+.file-container form button {
   width: 30px;
   height: 30px;
 
@@ -78,8 +83,8 @@ aside .bar button {
   transition: .2s;
 }
 
-.file-container button i {
-  color: #333;
+.file-container form button i {
+  color: rgb(170, 0, 0);
 }
 
 button:hover {

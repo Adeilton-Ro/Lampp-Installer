@@ -8,8 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles/global.css" />
-  <link rel="stylesheet" href="styles/modal.css" />
   <link rel="stylesheet" href="styles/home.css" />
+  <link rel="stylesheet" href="styles/modal.css" />
   <title>Lamp on linux</title>
 </head>
 
@@ -28,9 +28,8 @@
       </div>
       <div class="list-container">
         <?php
-          include("./scripts/php/ShowDirectorys.php");
-        ?>
-
+        include "scripts/php/ShowDirectorys.php";
+        ?> 
       </div>
     </aside>
     <main>
@@ -47,7 +46,7 @@
       <h1>Setup initialization</h1>
 
       <p>Select settings for creating your project.</p>
-      <?php
+       <?php
       echo "<form action='scripts/php/CreateDir.php' method='POST'>
         <input type='text' placeholder='Name Your Project' name='nameDir'>
         <select name='extension'>
@@ -58,9 +57,9 @@
           <option value='dir'> Directory </option>
           <option value='md'>README</option>
         </select>
-        <button type='submit' name='createDir' value=$openDir>Start a New Project</button>
+        <button id='modal-button' type='submit' name='createDir' value=$openDir>Start a New Project</button>
       </form>";
-      ?>
+      ?> 
       <button id="close">
         <i class="fas fa-times"></i>
       </button>
