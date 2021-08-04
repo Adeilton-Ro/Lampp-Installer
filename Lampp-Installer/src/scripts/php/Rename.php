@@ -1,33 +1,30 @@
 <?php
-if (isset($_POST["Rename"])) {
-  renameFilePopUp();
-  RenameD();
+function renameFilePopUp($arquivo){
+  echo "
+  <form method='post'>
+  <button id='open-edit' class='file-button' value='$arquivo' name='Rename'>
+  <i class='fas fa-edit'></i>
+  </button>
+  </form>";
 }
+
 function RenameD()
 {
-  $path = "../../../../projects";
-  $directory = $_POST["Rename"];
-  $extension = $_POST["extension"];
+  $pathAndDirectory = $GLOBALS["arquivo"];
+  $extension = $_POST["newExtension"];
   $newName = $_POST["newName"];
   if ($extension == "dir") {
-    rename("$path/$directory", "$path/$newName");
+    rename("$pathAndDirectory", "$pathAndDirectory/$newName");
   } else {
-    rename("$path/$directory", "$path/$newName.$extension");
+    rename("$pathAndDirectory", "$pathAndDirectory/$newName.$extension");
   }
-}
 
-function renameFilePopUp()
-{
-  echo "
-      <div id='modal-container' class='modal-container'>
-          <div class='modal'>
-            <h1>Rename file</h1>
+  $directoryWithoutPath = strrpos(substr("$pathAndDirectory", 0, -1),'/');
+  $path = substr("$pathAndDirectory", 0, $directoryWithoutPath);
 
-            <p>Update file name or type.</p>
-            <button id='close'>
-              <i class='fas fa-times'></i>
-            </button>
-          </div>
-      </div>
-      ";
+  echo ("
+    <script>
+    window.location.href = '../../index.php?dir=$path';
+    </script>
+    ");
 }

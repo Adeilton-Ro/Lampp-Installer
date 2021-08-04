@@ -1,10 +1,11 @@
 <?php
-include("Remove.php");
 
 $openDir = ($_GET['dir'] != "" ? $_GET['dir'] : "../../projects");
 $diretorio = dir($openDir);
 $strrdir = strrpos(substr($openDir, 0, -1), '/');
 $return = substr($openDir, 0, $strrdir);
+
+include("Rename.php");
 
 while ($arquivo = $diretorio->read()) {
   if ($arquivo != "." && $arquivo != "..") {
@@ -15,18 +16,19 @@ while ($arquivo = $diretorio->read()) {
       echo "<a class='file' href='$openDir/$arquivo'>$arquivo</a><br>";
     }
     echo "<br>
-            <div>
+            <div class='configure-buttons'>
               <form action='./scripts/php/Remove.php' method='post'>
-                <button value=$openDir/$arquivo name='Remove'>
+                <button value=$openDir/$arquivo name='Remove' class='file-button'>
                   <i class='fas fa-trash'></i>
                 </button>
-
-                <button value=$openDir/$arquivo name='Rename'>
-                  <i class='fas fa-edit'></i>
-                </button>
-              </form>
-            </div>
-          </div>";
+              </form>". 
+              renameFilePopUp("$openDir/$arquivo")
+              ."
+              </div>
+              </div>";
+              if(isset($_POST["Rename"])){
+                popUp($arquivo);
+              };
   }
 }
 

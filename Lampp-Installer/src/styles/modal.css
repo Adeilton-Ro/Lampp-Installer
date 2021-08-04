@@ -1,4 +1,4 @@
-.modal-container {
+.modal-container, .modal-container-edit {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,8 @@
   transition: opacity 0.3s ease;
 }
 
-.modal-container.show {
+.modal-container.show, 
+.modal-container-edit.show {
   opacity: 1;
   pointer-events: auto;
 }
@@ -43,7 +44,7 @@
   font-weight: 400;
 }
 
-.modal button#close {
+.modal button#close, button#close-edit {
   position: absolute;
 
   right: 20px;
@@ -128,3 +129,4 @@ form #modal-button {
 form #modal-button:hover {
   background-color: #eb8911;
 }
+

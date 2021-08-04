@@ -29,7 +29,7 @@
       <div class="list-container">
         <?php
         include "scripts/php/ShowDirectorys.php";
-        ?> 
+        ?>
       </div>
     </aside>
     <main>
@@ -46,7 +46,7 @@
       <h1>Setup initialization</h1>
 
       <p>Select settings for creating your project.</p>
-       <?php
+      <?php
       echo "<form action='scripts/php/CreateDir.php' method='POST'>
         <input type='text' placeholder='Name Your Project' name='nameDir'>
         <select name='extension'>
@@ -59,9 +59,37 @@
         </select>
         <button id='modal-button' type='submit' name='createDir' value=$openDir>Start a New Project</button>
       </form>";
-      ?> 
+      ?>
       <button id="close">
         <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+  <div id='modal-container-edit' class='modal-container-edit'>
+    <div class='modal'>
+      <h1>Rename file</h1>
+
+      <p>Update file name or type.</p>
+
+      <?php
+      function popUp($arquivo){
+        echo "<form action='scripts/php/Rename.php' method='POST'>
+          <input type='text' placeholder='Rename Your Project' name='newName' value='$arquivo'>
+          <select name='newExtension'>
+            <option value='php'>PHP</option>
+            <option value='html'>HTML</option>
+            <option value='css'>CSS</option>
+            <option value='js'>JavaScript</option>
+            <option value='dir'> Directory </option>
+            <option value='md'>README</option>
+          </select>
+          <button id='modal-button' type='submit' name='Rename'>Rename Project</button>
+        </form>";
+      }
+      ?>
+
+      <button id='close-edit' class=''>
+        <i class='fas fa-times'></i>
       </button>
     </div>
   </div>

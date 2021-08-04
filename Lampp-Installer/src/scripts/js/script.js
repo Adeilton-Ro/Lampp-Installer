@@ -9,3 +9,15 @@ open.addEventListener('click', () => {
 close.addEventListener('click', () => {
   modal_container.classList.remove('show');
 });
+
+const open_edit = document.getElementById('open-edit');
+const modal_container_edit = document.getElementById('modal-container-edit');
+const close_edit = document.getElementById('close-edit');
+
+open_edit.addEventListener('click', () => {
+  modal_container_edit.classList.add('show');
+});
+
+close_edit.addEventListener('click', () => {
+  modal_container_edit.classList.remove('show');
+});

@@ -65,12 +65,7 @@ aside .bar button {
   margin-bottom: 8px;
 }
 
-.file-container form{
-  width: 30px;
-  height: 30px;
-}
-
-.file-container form button {
+.file-container .file-button {
   width: 30px;
   height: 30px;
 
@@ -83,7 +78,7 @@ aside .bar button {
   transition: .2s;
 }
 
-.file-container form button i {
+.file-container .file-button i {
   color: rgb(170, 0, 0);
 }
 
@@ -125,4 +120,9 @@ main img.icon-image {
 
   background-color: rgb(255, 142, 6, 0.35);
   text-align: center;
+}
+
+.configure-buttons{
+    display: flex;
+    gap: 6px;
 }
