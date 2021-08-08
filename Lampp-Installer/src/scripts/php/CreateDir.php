@@ -1,12 +1,13 @@
 <?php
-/* 
-  This function has the power to create new 
-  files/directories in an easier way for users.
 
-  @param string $path = 
-  @param string $nameDir = 
-  @param string $extension =
-*/
+/**
+ * This function has the power to create new 
+ * files/directories in an easier way for users.
+ * 
+ * @param string $path = 
+ * @param string $nameDir = 
+ * @param string $extension =
+ */
 
 function CreateDir()
 {

@@ -1,13 +1,14 @@
 <?php
-/* 
-  This function has the power to show all files/directories
-  created by the user with delete and edit functions.
 
-  @param string $openDir = 
-  @param string $directory = 
-  @param function $strrDir = 
-  @param function $return = 
-*/
+/**
+ * This function has the power to show all files/directories
+ * created by the user with delete and edit functions.
+ *
+ * @param string $openDir = 
+ * @param string $directory = 
+ * @param function $strrDir = 
+ * @param function $return = 
+ */
 
 $openDir = ($_GET['dir'] != "" ? $_GET['dir'] : "../../projects");
 $directory = dir($openDir);
@@ -25,8 +26,7 @@ while ($file = $directory->read()) {
       echo "<a class='file' href='$openDir/$file'>$file</a><br>";
     }
 
-    echo (
-      "<br>
+    echo ("<br>
           <div class='configure-buttons'>
             <form action='./scripts/php/Remove.php' method='post'>
               <button value=$openDir/$file name='Remove' class='file-button'>
@@ -34,8 +34,7 @@ while ($file = $directory->read()) {
               </button>
             </form>" . renameFilePopUp("$openDir/$file") . "
           </div>
-        </div>"
-      );
+        </div>");
     if (isset($_POST["Rename"])) {
       popUp($file);
     };
