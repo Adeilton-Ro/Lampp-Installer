@@ -13,7 +13,7 @@
   opacity: 0;
   pointer-events: none;
 
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--gray);
   transition: opacity 0.3s ease;
 }
 
@@ -26,7 +26,7 @@
 .modal {
   position: relative;
 
-  background-color: #fff;
+  background-color: var(--white);
   width: 600px;
   max-width: 100%;
   border-radius: 6px;
@@ -36,7 +36,7 @@
   justify-content: space-around;
   flex-direction: column;
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px var(--gray);
   padding: 30px 50px;
 }
 
@@ -53,16 +53,12 @@
   width: 30px;
   height: 30px;
 
-  background-color: rgb(214, 62, 62);
+  background-color: var(--danger);
   border-radius: 8px;
   border: 0;
 
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
-}
-
-button {
-  background-color: #e3e3;
 }
 
 .modal form {
@@ -76,16 +72,16 @@ form input {
   width: 100%;
   padding: 14px;
 
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--gray);
 
   border-radius: 9px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--gray);
   margin-bottom: 8px;
 }
 
 input:focus {
   outline: none !important;
-  border: 2px solid #ff8e06;
+  border: 2px solid var(--orange);
 }
 
 form select {
@@ -95,7 +91,7 @@ form select {
   border: 0;
 
   border-radius: 9px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--gray);
   margin-bottom: 8px;
 
   -webkit-appearance: none;
@@ -117,16 +113,16 @@ form #modal-button {
   border: 0;
   border-radius: 9px;
 
-  color: #fff;
+  color: var(--white);
   font-weight: 400;
 
-  background-color: #ff8e06;
+  background-color: var(--orange);
   cursor: pointer;
 
   transition: background-color 0.3s ease;
 }
 
 form #modal-button:hover {
-  background-color: #eb8911;
+  background-color: var(--dark-orange);
 }
 

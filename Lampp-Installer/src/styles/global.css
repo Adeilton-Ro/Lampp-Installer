@@ -14,3 +14,11 @@ input,
 button {
   font-family: 'Roboto', sans-serif;
 }
+
+:root{
+  --white: #fff;
+  --danger: rgb(214, 62, 62);
+  --orange: #ff8e06;
+  --dark-orange: #eb8911;
+  --gray: rgba(0, 0, 0, 0.1);
+}

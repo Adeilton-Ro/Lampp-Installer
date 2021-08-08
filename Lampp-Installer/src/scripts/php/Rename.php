@@ -1,12 +1,29 @@
 <?php
-function renameFilePopUp($arquivo){
+/* 
+  This function has the power to call
+  popUp to edit the file/directory
+
+  @param string $file = 
+*/
+
+function renameFilePopUp($file){
   echo "
-  <form method='post'>
-  <button id='open-edit' class='file-button' value='$arquivo' name='Rename'>
+  <button id='open-edit' class='file-button' value='$file' name='Rename'>
   <i class='fas fa-edit'></i>
-  </button>
-  </form>";
+  </button>";
 }
+
+/* 
+
+  This function has the power to rename files/directories
+  selected through ShowDirectorys() function.
+
+  @param string $pathAndDirectory =
+  @param string $extension =
+  @param string $newName =
+  @param string $directoryWithoutPath =
+  @param string $path =
+*/
 
 function RenameD()
 {
@@ -23,8 +40,8 @@ function RenameD()
   $path = substr("$pathAndDirectory", 0, $directoryWithoutPath);
 
   echo ("
-    <script>
+  <script>
     window.location.href = '../../index.php?dir=$path';
-    </script>
-    ");
+  </script>
+  ");
 }

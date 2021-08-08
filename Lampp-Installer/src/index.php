@@ -14,9 +14,12 @@
 </head>
 
 <body>
+
+  <!-- Container section -->
   <div class="container">
     <aside>
       <div class="bar">
+      <!-- Create new project from interface -->
         <button id="open">
           <i class="fas fa-plus fa-xs"></i>
         </button>
@@ -26,12 +29,34 @@
           <b>your project</b>!
         </p>
       </div>
+
+      <!-- List of projects already created -->
       <div class="list-container">
-        <?php
-        include "scripts/php/ShowDirectorys.php";
-        ?>
+        <!-- <?php
+              /* 
+          Function that shows all user-created directories.
+        */
+              /* include "scripts/php/ShowDirectorys.php"; */
+              ?> -->
+
+        <!-- teste pois no meu php ainda ta bugado
+        <div class='file-container'>
+          <a class='file' href='index.php?dir=$openDir/$file'>jkspdk</a>
+          <div class='configure-buttons'>
+            <form action='./scripts/php/Remove.php' method='post'>
+              <button value=$openDir/$file name='Remove' class='file-button'>
+                <i class='fas fa-trash'></i>
+              </button>
+            </form>
+            <button id='open-edit' class='file-button'>
+              <i class='fas fa-edit'></i>
+            </button>
+          </div>
+        </div> -->
       </div>
     </aside>
+
+    <!-- Main area of image -->
     <main>
       <img class="icon-image" src="assets/iconImg.png" alt="Xamp on linux" />
 
@@ -40,6 +65,11 @@
       <div class="inform">made by brazilians 🇧🇷</div>
     </main>
   </div>
+
+  <!-- 
+    Section intended for modal's that are only
+    executed when called by functions.
+   -->
 
   <div id="modal-container" class="modal-container">
     <div class="modal">
@@ -65,6 +95,7 @@
       </button>
     </div>
   </div>
+
   <div id='modal-container-edit' class='modal-container-edit'>
     <div class='modal'>
       <h1>Rename file</h1>
@@ -72,9 +103,23 @@
       <p>Update file name or type.</p>
 
       <?php
-      function popUp($arquivo){
+
+      /* 
+        dar um include e escrever na tela com echo verificando se o
+        nome do arquivo ao menos foi retornado
+
+        atribuir a alguma variavel
+
+        e passar como parametro a variavel criada dentro dafunção popup()
+
+        se não passar o parametro o formulario n vai mostrar e muito menos
+        poder editar.
+      */
+
+      function popUp($file)
+      {
         echo "<form action='scripts/php/Rename.php' method='POST'>
-          <input type='text' placeholder='Rename Your Project' name='newName' value='$arquivo'>
+          <input type='text' placeholder='Rename Your Project' name='newName' value='$file'>
           <select name='newExtension'>
             <option value='php'>PHP</option>
             <option value='html'>HTML</option>
@@ -94,6 +139,7 @@
     </div>
   </div>
 
+  <!-- Scripts and functions -->
   <script src="https://kit.fontawesome.com/2be8964d04.js" crossorigin="anonymous"></script>
   <script src="scripts/js/script.js"></script>
 </body>

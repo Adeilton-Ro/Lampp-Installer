@@ -38,10 +38,10 @@ aside .bar button {
   width: 45px;
   height: 45px;
 
-  color: #fff;
+  color: var(--white);
   font-size: 26px;
 
-  background-color: #ff8e06;
+  background-color: var(--orange);
   border-radius: 11px;
   border: 0;
 
@@ -50,7 +50,7 @@ aside .bar button {
 }
 
 .bar button:hover {
-  background-color: #eb8911;
+  background-color: var(--dark-orange);
 }
 
 .list-container .file-container {
@@ -74,18 +74,17 @@ aside .bar button {
 
   cursor: pointer;
 
-  background-color: #fff;
-  transition: .2s;
+  background-color: var(--white);
+  transition: 0.2s;
 }
 
 .file-container .file-button i {
-  color: rgb(170, 0, 0);
+  color: #666;
 }
 
 button:hover {
   background-color: rgb(204, 204, 204);
 }
-
 
 .file {
   text-decoration: none;
@@ -122,7 +121,7 @@ main img.icon-image {
   text-align: center;
 }
 
-.configure-buttons{
-    display: flex;
-    gap: 6px;
+.configure-buttons {
+  display: flex;
+  gap: 6px;
 }
