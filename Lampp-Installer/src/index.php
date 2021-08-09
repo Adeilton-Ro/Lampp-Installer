@@ -71,23 +71,6 @@
 
       <p>Update file name or type.</p>
 
-      <?php
-      function popUp($arquivo){
-        echo "<form action='scripts/php/Rename.php' method='POST'>
-          <input type='text' placeholder='Rename Your Project' name='newName' value='$arquivo'>
-          <select name='newExtension'>
-            <option value='php'>PHP</option>
-            <option value='html'>HTML</option>
-            <option value='css'>CSS</option>
-            <option value='js'>JavaScript</option>
-            <option value='dir'> Directory </option>
-            <option value='md'>README</option>
-          </select>
-          <button id='modal-button' type='submit' name='Rename'>Rename Project</button>
-        </form>";
-      }
-      ?>
-
       <button id='close-edit' class=''>
         <i class='fas fa-times'></i>
       </button>
