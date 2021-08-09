@@ -32,15 +32,15 @@ Project developed to help Linux novice users who want to work in a direct and ea
 ### ⚡ Get starting
 
 ```sh
- $ wget https://github.com/Adeilton-Ro/Lampp-Installer/archive/refs/heads/main.zip
+ wget https://github.com/Adeilton-Ro/Lampp-Installer/archive/refs/heads/main.zip
 
- $ unzip main.zip
+ unzip main.zip
 
- $ cd Lampp-Installer-main/
+ cd Lampp-Installer-main/
 
- $ chmod 777 Installer.sh
+ chmod 777 Installer.sh
 
- $ ./Installer.sh
+ ./Installer.sh
 ```
 
 ## 📄 License
