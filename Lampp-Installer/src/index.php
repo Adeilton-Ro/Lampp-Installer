@@ -37,7 +37,7 @@
           Function that shows all user-created directories.
         */
         
-        include "scripts/php/ShowDirectorys.php"; 
+        //include "scripts/php/ShowDirectorys.php"; 
         ?>
 
         <!-- teste pois no meu php ainda ta bugado
@@ -79,7 +79,7 @@
       <p>Select settings for creating your project.</p>
       <?php
       echo "<form action='scripts/php/CreateDir.php' method='POST'>
-        <input type='text' placeholder='Name Your Project' name='nameDir'>
+        <input type='text' placeholder='Name Your Project' name='nameDir' id='input-modal'>
         <select name='extension'>
           <option value='php'>PHP</option>
           <option value='html'>HTML</option>
@@ -96,50 +96,6 @@
       </button>
     </div>
   </div>
-
-  <div id='modal-container-edit' class='modal-container-edit'>
-    <div class='modal'>
-      <h1>Rename file</h1>
-
-      <p>Update file name or type.</p>
-
-      <?php
-
-      /* 
-        dar um include e escrever na tela com echo verificando se o
-        nome do arquivo ao menos foi retornado
-
-        atribuir a alguma variavel
-
-        e passar como parametro a variavel criada dentro dafunção popup()
-
-        se não passar o parametro o formulario n vai mostrar e muito menos
-        poder editar.
-      */
-
-      function popUp($file)
-      {
-        echo "<form action='scripts/php/Rename.php' method='POST'>
-          <input type='text' placeholder='Rename Your Project' name='newName' value='$file'>
-          <select name='newExtension'>
-            <option value='php'>PHP</option>
-            <option value='html'>HTML</option>
-            <option value='css'>CSS</option>
-            <option value='js'>JavaScript</option>
-            <option value='dir'> Directory </option>
-            <option value='md'>README</option>
-          </select>
-          <button id='modal-button' type='submit' name='Rename'>Rename Project</button>
-        </form>";
-      }
-      ?>
-
-      <button id='close-edit' class=''>
-        <i class='fas fa-times'></i>
-      </button>
-    </div>
-  </div>
-
   <!-- Scripts and functions -->
   <script src="https://kit.fontawesome.com/2be8964d04.js" crossorigin="anonymous"></script>
   <script src="scripts/js/script.js"></script>

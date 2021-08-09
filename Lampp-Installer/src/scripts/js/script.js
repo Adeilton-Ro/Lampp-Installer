@@ -1,6 +1,6 @@
 /**
  * This function has the power to open and close
- * popUp's by removing/adding the html tags class
+ * popUp's by removing/adding the html tags class.
  *
  * @param {string} openButton =
  * @param {string} modalContaier =
@@ -21,5 +21,25 @@ function handleOpenCloseModal(openButton, modalContaier, closeButton) {
   });
 }
 
+/**
+ * This function has power restrict input from 
+ * typing special characters.
+ * 
+ * We could even add a pattern using regex but 
+ * it would prevent us from putting some characters we could use
+ * 
+ * pattern="^[a-zA-Z0-9]+$"
+ * 
+ * @param {string} inputClass = 
+ * */
+
+function handleDisableCharacter(inputClass) {
+  document.getElementById(inputClass).onkeypress = (e) => {
+    var chr = String.fromCharCode(e.which);
+    if ("1234567890qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".indexOf(chr) < 0)
+      return false;
+  };
+}
+
 handleOpenCloseModal('open', 'modal-container', 'close');
-handleOpenCloseModal('open-edit', 'modal-container-edit', 'close-edit');
+handleDisableCharacter('input-modal');
