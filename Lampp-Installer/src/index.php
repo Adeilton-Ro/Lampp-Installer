@@ -14,9 +14,12 @@
 </head>
 
 <body>
+
+  <!-- Container section -->
   <div class="container">
     <aside>
       <div class="bar">
+        <!-- Create new project from interface -->
         <button id="open">
           <i class="fas fa-plus fa-xs"></i>
         </button>
@@ -26,12 +29,20 @@
           <b>your project</b>!
         </p>
       </div>
+
+      <!-- List of projects already created -->
       <div class="list-container">
         <?php
-        include "scripts/php/ShowDirectorys.php";
+        /* 
+          Function that shows all user-created directories.
+        */
+        
+        include "scripts/php/ShowDirectorys.php"; 
         ?>
       </div>
     </aside>
+
+    <!-- Main area of image -->
     <main>
       <img class="icon-image" src="assets/iconImg.png" alt="Xamp on linux" />
 
@@ -41,6 +52,11 @@
     </main>
   </div>
 
+  <!-- 
+    Section intended for modal's that are only
+    executed when called by functions.
+   -->
+
   <div id="modal-container" class="modal-container">
     <div class="modal">
       <h1>Setup initialization</h1>
@@ -48,7 +64,7 @@
       <p>Select settings for creating your project.</p>
       <?php
       echo "<form action='scripts/php/CreateDir.php' method='POST'>
-        <input type='text' placeholder='Name Your Project' name='nameDir'>
+        <input type='text' placeholder='Name Your Project' name='nameDir' id='input-modal'>
         <select name='extension'>
           <option value='php'>PHP</option>
           <option value='html'>HTML</option>
@@ -65,18 +81,7 @@
       </button>
     </div>
   </div>
-  <div id='modal-container-edit' class='modal-container-edit'>
-    <div class='modal'>
-      <h1>Rename file</h1>
-
-      <p>Update file name or type.</p>
-
-      <button id='close-edit' class=''>
-        <i class='fas fa-times'></i>
-      </button>
-    </div>
-  </div>
-
+  <!-- Scripts and functions -->
   <script src="https://kit.fontawesome.com/2be8964d04.js" crossorigin="anonymous"></script>
   <script src="scripts/js/script.js"></script>
 </body>

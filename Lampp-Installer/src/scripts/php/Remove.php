@@ -1,21 +1,31 @@
 <?php
-if (isset($_POST['Remove'])) {
-    Remove();
-}
+/** 
+ * This function has the power to 
+ * delete user files/directories
+ *
+ * @param string $pathDirectory =
+ * @param string $directoryWithoutPath = 
+ * @param string $path =  
+ * */
+
 function Remove()
 {
-    $pathAndDirectory = $_POST["Remove"];
-    if (is_dir("../../$pathAndDirectory")) {
-        rmdir("../../$pathAndDirectory");
-    } else {
-        unlink("../../$pathAndDirectory");
-    }
-    $directoryWithoutPath = strrpos(substr("$pathAndDirectory", 0, -1),'/');
-    $path = substr("$pathAndDirectory", 0, $directoryWithoutPath);
-    echo ("
-    <script>
+  $pathDirectory = $_POST["Remove"];
+  if (is_dir("../../$pathDirectory")) {
+    rmdir("../../$pathDirectory");
+  } else {
+    unlink("../../$pathDirectory");
+  }
+  $directoryWithoutPath = strrpos(substr("$pathDirectory", 0, -1), '/');
+  $path = substr("$pathDirectory", 0, $directoryWithoutPath);
+  echo ("
+  <script>
     window.location.href = '../../index.php?dir=$path';
-    </script>
-    ");
+  </script>
+  ");
+}
+
+if (isset($_POST['Remove'])) {
+  Remove();
 }
 ?>

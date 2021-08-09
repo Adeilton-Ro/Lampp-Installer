@@ -1,9 +1,20 @@
 <?php
+/**
+ * This function has the power to show all files/directories
+ * created by the user with delete and edit functions.
+ *
+ * @param string $openDir = 
+ * @param string $directory = 
+ * @param function $strrDir = 
+ * @param function $return = 
+ */
 
 $openDir = ($_GET['dir'] != "" ? $_GET['dir'] : "../../projects");
 $directory = dir($openDir);
-$strrdir = strrpos(substr($openDir, 0, -1), '/');
-$return = substr($openDir, 0, $strrdir);
+$strrDir = strrpos(substr($openDir, 0, -1), '/');
+$return = substr($openDir, 0, $strrDir);
+
+include("Rename.php");
 
 while ($file = $directory->read()) {
   if ($file != "." && $file != "..") {
@@ -30,3 +41,4 @@ if ($openDir != "../../projects/" && $openDir != "../../projects") {
 }
 
 $directory->close();
+?>
