@@ -23,21 +23,17 @@ while ($file = $directory->read()) {
     if (is_dir("$openDir/$file")) {
       echo "<a class='file' href='index.php?dir=$openDir/$file'>$file</a><br>";
     } else {
-      echo "<a class='file' href='$openDir/$file'>$file</a><br>";
+      echo "<a class='file' href='$openDir/$file' target='_blank'>$file</a><br>";
     }
-
     echo "<br>
-          <div class='configure-buttons'>
-            <form action='./scripts/php/Remove.php' method='post'>
-              <button value=$openDir/$file name='Remove' class='file-button'>
-                <i class='fas fa-trash'></i>
-              </button>
-            </form>" . renameFilePopUp("$openDir/$file") . "
-          </div>
-        </div>";
-    if (isset($_POST["Rename"])) {
-      popUp($file);
-    };
+            <div class='configure-buttons'>
+              <form action='./scripts/php/Remove.php' method='post'>
+                <button value=$openDir/$file name='Remove' class='file-button'>
+                  <i class='fas fa-trash'></i>
+                </button>
+              </form>
+              </div>
+            </div>";
   }
 }
 

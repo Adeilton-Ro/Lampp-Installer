@@ -37,7 +37,7 @@
           Function that shows all user-created directories.
         */
         
-        /* include "scripts/php/ShowDirectorys.php"; */
+        include "scripts/php/ShowDirectorys.php"; 
         ?>
 
         <!-- teste pois no meu php ainda ta bugado
