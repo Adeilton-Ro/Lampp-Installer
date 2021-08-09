@@ -19,7 +19,7 @@
   <div class="container">
     <aside>
       <div class="bar">
-      <!-- Create new project from interface -->
+        <!-- Create new project from interface -->
         <button id="open">
           <i class="fas fa-plus fa-xs"></i>
         </button>
@@ -32,12 +32,13 @@
 
       <!-- List of projects already created -->
       <div class="list-container">
-        <!-- <?php
-              /* 
+        <?php
+        /* 
           Function that shows all user-created directories.
         */
-              /* include "scripts/php/ShowDirectorys.php"; */
-              ?> -->
+        
+        /* include "scripts/php/ShowDirectorys.php"; */
+        ?>
 
         <!-- teste pois no meu php ainda ta bugado
         <div class='file-container'>
