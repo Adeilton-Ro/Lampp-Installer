@@ -71,11 +71,14 @@ aside .bar button {
 
   border-radius: 6px;
   border: 0;
+  background-color: var(--white);
 
   cursor: pointer;
-
-  background-color: var(--white);
   transition: 0.2s;
+}
+
+.file-button:hover {
+  background-color: var(--gray);
 }
 
 .file-container .file-button i {
@@ -124,4 +127,24 @@ main img.icon-image {
 .configure-buttons {
   display: flex;
   gap: 6px;
+}
+
+.list-container .return {
+  text-decoration: none;
+  color: var(--white);
+
+  padding: 4px;
+  background-color: var(--orange);
+
+  border-radius: 4px;
+
+  position: absolute;
+  bottom: 5rem;
+  left: 6rem;
+
+  transition: 0.2s;
+}
+
+.return:hover {
+  background-color: var(--dark-orange);
 }

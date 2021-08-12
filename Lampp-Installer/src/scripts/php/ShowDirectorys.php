@@ -38,7 +38,9 @@ while ($file = $directory->read()) {
 }
 
 if ($openDir != "../../projects/" && $openDir != "../../projects") {
-  echo "<a class='return' href='index.php?dir=$return'>Voltar</a>";
+  echo "<a class='return' href='index.php?dir=$return'>
+  <i class='fas fa-arrow-left'></i>
+  </a>";
 }
 
 $directory->close();

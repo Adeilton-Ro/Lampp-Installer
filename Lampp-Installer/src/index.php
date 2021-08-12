@@ -33,27 +33,9 @@
       <!-- List of projects already created -->
       <div class="list-container">
         <?php
-        /* 
-          Function that shows all user-created directories.
-        */
-        
-        //include "scripts/php/ShowDirectorys.php"; 
+        // Function that shows all user-created directories.
+        include "scripts/php/ShowDirectorys.php";
         ?>
-
-        <!-- teste pois no meu php ainda ta bugado
-        <div class='file-container'>
-          <a class='file' href='index.php?dir=$openDir/$file'>jkspdk</a>
-          <div class='configure-buttons'>
-            <form action='./scripts/php/Remove.php' method='post'>
-              <button value=$openDir/$file name='Remove' class='file-button'>
-                <i class='fas fa-trash'></i>
-              </button>
-            </form>
-            <button id='open-edit' class='file-button'>
-              <i class='fas fa-edit'></i>
-            </button>
-          </div>
-        </div> -->
       </div>
     </aside>
 
