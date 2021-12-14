@@ -15,8 +15,6 @@ $directory = dir($openDir);
 $strrDir = strrpos(substr($openDir, 0, -1), '/');
 $return = substr($openDir, 0, $strrDir);
 
-include("Rename.php");
-
 while ($file = $directory->read()) {
   if ($file != "." && $file != "..") {
     echo "<div class='file-container'>";
